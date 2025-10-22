@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Flash Learn to Fly</title>
-    <script src="ruffle/ruffle.js"></script>
+    <!-- Load Ruffle from the official CDN -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         body {
             display: flex;
@@ -20,12 +21,7 @@
     </style>
 </head>
 <body>
-    <div id="flash-container">
-        <object type="application/x-shockwave-flash" data="flash_learn-to-fly.swf" width="800" height="600">
-            <param name="movie" value="flash_learn-to-fly.swf">
-            <p>Your browser does not support Flash. Ruffle will emulate it for you.</p>
-        </object>
-    </div>
+    <div id="flash-container"></div>
 
     <script>
         // Initialize Ruffle
@@ -33,8 +29,9 @@
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("flash-container");
-        container.innerHTML = ""; // Clear fallback
         container.appendChild(player);
+
+        // Load your SWF
         player.load("flash_learn-to-fly.swf");
     </script>
 </body>
