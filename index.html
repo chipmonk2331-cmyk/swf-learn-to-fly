@@ -12,20 +12,15 @@
             width: 100%;
             height: 100%;
             background-color: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
         }
 
         #flash-container {
-            width: 100%;
-            max-width: 800px;
-            aspect-ratio: 4 / 3; /* Maintains 4:3 ratio */
-        }
-
-        #flash-container > * {
-            width: 100%;
-            height: 100%;
+            width: 800px;
+            height: 600px;
+            position: absolute;
+            top: 200px;   /* 200px down */
+            left: 200px;  /* 200px right */
         }
     </style>
 </head>
